@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Book; // Add this line to import the Book class
 
 class Review extends Model
 {
     use HasFactory;
 
-    protected $fillable=['rating','review'];
+    protected $fillable=['review','rating'];
 
     public function book()
     {
