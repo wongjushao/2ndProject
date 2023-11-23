@@ -17,10 +17,10 @@ class BookFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence,
-            'author' => $this->faker->name,
-            'created_at' =>fake()->dateTimeBetween('-6 years'),
-            'updated_at' =>function(array $attributes){
+            'title' => fake()->sentence(3),
+            'author' => fake()->name,
+            'created_at' => fake()->dateTimeBetween('-2 years'),
+            'updated_at' => function (array $attributes) {
                 return fake()->dateTimeBetween($attributes['created_at'], 'now');
             },
         ];
